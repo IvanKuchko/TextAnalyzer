@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TextAnalyzer.Client.Views.ComparePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Сравнение результатов">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button
+                Command="{Binding GetUsersCommand}"
+                HorizontalOptions="FillAndExpand"
+                Text="Получить список пользователей"
+                VerticalOptions="Start" />
+            <ListView
+                HasUnevenRows="True"
+                HorizontalOptions="FillAndExpand"
+                ItemsSource="{Binding Users}"
+                SelectedItem="{Binding SelectedUser, Mode=TwoWay}"
+                VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label
+                                            FontSize="Medium"
+                                            HorizontalOptions="Start"
+                                            Text="{Binding FirstName}" />
+                                        <Label
+                                            FontSize="Medium"
+                                            HorizontalOptions="Start"
+                                            Text="{Binding LastName}" />
+                                    </StackLayout>
+                                    <Label
+                                        FontSize="Small"
+                                        HorizontalOptions="Start"
+                                        Text="{Binding Email}" />
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button
+                Command="{Binding CompareWithUserCommand}"
+                HorizontalOptions="FillAndExpand"
+                Text="Сравнить с выбранным"
+                VerticalOptions="End" />
+            <Button
+                Command="{Binding CompareWithUsersCommand}"
+                HorizontalOptions="FillAndExpand"
+                Text="Сравнить со всеми"
+                VerticalOptions="End" />
+            <Label
+                HorizontalOptions="FillAndExpand"
+                Text="{Binding Result}"
+                VerticalOptions="End" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

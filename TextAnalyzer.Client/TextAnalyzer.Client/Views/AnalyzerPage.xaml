@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TextAnalyzer.Client.Views.AnalyzerPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Анализатор">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label
+                HorizontalOptions="FillAndExpand"
+                Text="Вывод:"
+                VerticalOptions="Start" />
+            <Label
+                HorizontalOptions="FillAndExpand"
+                Text="{Binding Output}"
+                VerticalOptions="FillAndExpand" />
+            <Entry
+                HorizontalOptions="FillAndExpand"
+                Placeholder="Введите текст"
+                Text="{Binding Text}"
+                VerticalOptions="End" />
+            <StackLayout Orientation="Horizontal" VerticalOptions="End">
+                <Button
+                    Command="{Binding AddValueCommand}"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Жарим"
+                    VerticalOptions="Center" />
+                <Button
+                    Command="{Binding GoToCompareCommand}"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Сравнить"
+                    VerticalOptions="Center" />
+            </StackLayout>
+<<<<<<< HEAD
+            <Button
+                Command="{Binding CompareWithRandomUserCommand}"
+                HorizontalOptions="FillAndExpand"
+                Text="Сравнить случайным пользователем"
+                VerticalOptions="End" />
+=======
+>>>>>>> 90ebc9c8c12f12b888911c5fdf2c90f5877da5bb
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
